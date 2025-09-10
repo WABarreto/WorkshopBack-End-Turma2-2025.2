@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Endereços</title>
+</head>
+<body>
+    <h1>Lista de Endereços</h1>
+    <ul>
+        {% for e in enderecos %}
+            <li>
+                {{ e.cep }} - {{ e.rua }}
+                <a href="{% url 'detail' e.id %}">Detalhes</a> |
+                <a href="{% url 'delete' e.id %}">Excluir</a>
+            </li>
+        {% empty %}
+            <li>Nenhum endereço cadastrado.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">Voltar</a>
+</body>
+</html>

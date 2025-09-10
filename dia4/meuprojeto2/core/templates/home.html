@@ -7,9 +7,12 @@
 <body>
     <h1>Consulta de Endereço</h1>
 
-    <form method="get" action="{% url 'consulta_cep' %}">
+    <form method="post" action="{% url 'home' %}">
+        {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Consultar</button>
     </form>
+
+    <a href="{% url 'list' %}">Ver lista de endereços</a>
 </body>
 </html>

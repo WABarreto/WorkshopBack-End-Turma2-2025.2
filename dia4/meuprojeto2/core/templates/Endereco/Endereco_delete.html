@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Excluir Endereço</h1>
+<p>Tem certeza que deseja excluir este endereço?</p>
+<p><strong>{{ endereco }}</strong></p>
+
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirmar</button>
+</form>
+<a href="{% url 'list' %}">Cancelar</a>
+</body>
+</html>
