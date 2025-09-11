@@ -7,7 +7,7 @@ from django.views.generic import FormView, ListView, DetailView, DeleteView
 class HomeView(FormView):
     template_name = 'home.html'
     form_class = EnderecoForm
-    success_url = reverse_lazy('list')  # Redireciona para a lista após consultar
+    success_url = reverse_lazy('list')
 
     def form_valid(self, form):
         cep = form.cleaned_data['cep']
